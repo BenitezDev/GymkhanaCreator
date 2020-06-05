@@ -1,0 +1,13 @@
+<!DOCTYPE >
+<Monologues>
+	<monologue_test>
+		<side>LEFT</side>
+		<character>TODO</character>
+		<sentences>
+			<sentence index="0">primera frase</sentence>
+			<sentence index="1">segunda fraseee</sentence>
+			<sentence index="2">tercera fraseeee</sentence>
+		</sentences>
+	</monologue_test>
+</Monologues>
+

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/CreateGymkhawnaDialogue.ui</file>
+        <file>resources/MainWindow.ui</file>
+    </qresource>
+</RCC>
