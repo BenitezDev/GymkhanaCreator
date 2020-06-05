@@ -7,6 +7,7 @@
 
 #include <model/Gymkhana.hpp>
 #include <StageWidget.hpp>
+#include <RouteWidget.hpp>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -16,9 +17,12 @@ MainWindow::MainWindow(QWidget *parent)
     
     connect(ui.actionCreateNewGymkhana, &QAction::triggered, this, &MainWindow::create_new_gymkhana);
 
-	connect(ui.pushButton, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
+	
 
 	ui.RoutesTabWidget->clear();
+	ui.RoutesTabWidget->addTab(new RouteWidget, { "route" });
+	
+	connect(dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.AddStage, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
 }
 
 
@@ -30,16 +34,18 @@ void MainWindow::create_new_gymkhana()
 	{
 
 		auto text = dialogue.ui.NameInput->toPlainText().toStdString();
-		auto version = dialogue.ui.VersionInput->toPlainText().toStdString();
+		//auto version = dialogue.ui.VersionInput->toPlainText().toStdString();
 
-		if (text.empty() || version.empty())
+		if (text.empty() /*|| version.empty()*/)
 		{
 			dialogue.ui.errorLabel->setText("Introduce a valid input.");
 		}
 		else
 		{
+			std::string gymkhana_name = "Gymkhana: ";
+			gymkhana_name += text;
 			backend::GymkhanaManager::instance().get_gymkhana().change_name(text);
-			ui.debugText->setText(text.c_str());
+			ui.gymkhanaName->setText(gymkhana_name.c_str());
 			dialogue.hide();
 
 			
@@ -47,12 +53,13 @@ void MainWindow::create_new_gymkhana()
 	}
 	else if (dialogue.exec() == QDialog::Rejected)
 	{
-		ui.debugText->setText("se ha cerrado el dialoguo");
 		dialogue.hide();
 	}
 }
 
+
 void MainWindow::add_stage_to_route()
 {
-	ui.RoutesTabWidget->addTab(new StageWidget(), { "f" });
+	dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.StageLayout->addWidget(new StageWidget);
+	
 }

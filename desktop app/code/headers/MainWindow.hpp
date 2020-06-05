@@ -20,4 +20,5 @@ public slots:
 	void create_new_gymkhana();
 
 	void add_stage_to_route();
+	
 };

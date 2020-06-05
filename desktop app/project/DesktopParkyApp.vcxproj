@@ -83,7 +83,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;..\..\backend\code\headers;..\..\backend\code\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;..\..\backend\code\headers;..\..\backend\code\;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>backend.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -92,7 +92,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;..\..\backend\code\headers;..\..\backend\code\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;..\..\backend\code\headers;..\..\backend\code\;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>backend.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -106,6 +106,7 @@
     <ClCompile Include="..\code\source\CreateGymkhawnaDialogue.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\MainWindow.cpp" />
+    <ClCompile Include="..\code\source\RouteWidget.cpp" />
     <ClCompile Include="..\code\source\StageWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -115,12 +116,16 @@
     <QtMoc Include="..\code\headers\CreateGymkhawnaDialogue.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="..\code\headers\StageWidget.ui" />
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui" />
     <QtUic Include="resources\MainWindow.ui" />
+    <QtUic Include="resources\RouteWidget.ui" />
+    <QtUic Include="resources\StageWidget.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\StageWidget.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\RouteWidget.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
