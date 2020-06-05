@@ -71,7 +71,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GYMKHANA;NDEBUG;BACKEND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\code\source;..\..\libraries\rapidxml;..\..\code\headers;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\code\source;..\..\libraries\rapidxml;..\..\code\headers;..\..\code\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -83,7 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Linkage.hpp" />
-    <ClInclude Include="..\..\code\headers\Test.hpp" />
+    <ClInclude Include="..\..\code\headers\GymkhanaManager.hpp" />
     <ClInclude Include="..\..\code\model\Character.hpp" />
     <ClInclude Include="..\..\code\model\Dialogue.hpp" />
     <ClInclude Include="..\..\code\model\Gymkhana.hpp" />
@@ -96,7 +96,7 @@
     <ClInclude Include="..\..\code\model\StateComponentAR.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\source\Test.cpp" />
+    <ClCompile Include="..\..\code\source\GhymkhanaManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

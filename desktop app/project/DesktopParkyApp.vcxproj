@@ -83,21 +83,30 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;..\..\backend\code\headers;..\..\backend\code\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>backend.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(Platform)/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\code\source;..\code\headers\;..\..\backend\code\headers;..\..\backend\code\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>backend.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(Platform)/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="MainWindow.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\headers\CreateGymkhawnaDialogue.cpp" />
+    <ClCompile Include="..\code\source\CreateGymkhawnaDialogue.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\MainWindow.cpp" />
+    <ClCompile Include="..\code\source\StageWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\MainWindow.hpp" />
@@ -106,8 +115,12 @@
     <QtMoc Include="..\code\headers\CreateGymkhawnaDialogue.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="..\code\headers\StageWidget.ui" />
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui" />
     <QtUic Include="resources\MainWindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\StageWidget.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -21,9 +21,6 @@
     <ClInclude Include="..\..\code\headers\Linkage.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Test.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\model\Gymkhana.hpp">
       <Filter>Model</Filter>
     </ClInclude>
@@ -54,9 +51,12 @@
     <ClInclude Include="..\..\code\model\StageComponentHint.hpp">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\GymkhanaManager.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\source\Test.cpp">
+    <ClCompile Include="..\..\code\source\GhymkhanaManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

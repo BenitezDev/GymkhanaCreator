@@ -7,7 +7,7 @@
 #include <vector>
 
 
-namespace benitezdev
+namespace backend
 {
 
 	class Image

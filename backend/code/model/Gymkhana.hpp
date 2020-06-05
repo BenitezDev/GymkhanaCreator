@@ -7,13 +7,13 @@
 #include <vector>
 #include <string>
 
-namespace benitezdev
+namespace backend
 {
 	class Gymkhana
 	{
 	private:
 		std::string name;
-		// int version;
+		// std::string version;
 		// std::string bundle_identifier;
 		std::vector<Route> routes;
 		
@@ -23,9 +23,9 @@ namespace benitezdev
 			routes.emplace_back();
 		}
 
-		void change_name(std::string& name)
-		{
-			this->name = name;
-		}
+		
+		void        change_name(std::string& name)	{ this->name = name; }
+		std::string get_name   () const				{ return  name	   ; }
+		
 	};
 }

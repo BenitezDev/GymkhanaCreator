@@ -8,7 +8,7 @@
 #include "Monologue.hpp"
 
 
-namespace benitezdev
+namespace backend
 {
 	class StageComponentHint
 	{

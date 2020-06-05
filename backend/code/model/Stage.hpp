@@ -7,7 +7,7 @@
 #include "StageComponent.hpp"
 
 
-namespace benitezdev
+namespace backend
 {
 	class Stage
 	{

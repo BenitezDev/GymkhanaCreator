@@ -12,7 +12,7 @@
 #include <rapidxml.hpp>
 #include <sstream>
 using namespace rapidxml;
-namespace benitezdev
+namespace backend
 {
 	class Monologue 
 	{

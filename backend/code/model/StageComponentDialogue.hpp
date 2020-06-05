@@ -7,7 +7,7 @@
 #include "Monologue.hpp"
 
 
-namespace benitezdev
+namespace backend
 {
 	class StageComponentDialogue : StageComponent
 	{

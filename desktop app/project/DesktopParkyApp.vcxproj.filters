@@ -29,7 +29,10 @@
     <ClCompile Include="..\code\source\MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\headers\CreateGymkhawnaDialogue.cpp">
+    <ClCompile Include="..\code\source\StageWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\CreateGymkhawnaDialogue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,12 +43,18 @@
     <QtMoc Include="..\code\headers\CreateGymkhawnaDialogue.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="..\code\headers\StageWidget.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui">
       <Filter>Resource Files</Filter>
     </QtUic>
     <QtUic Include="resources\MainWindow.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="..\code\headers\StageWidget.ui">
       <Filter>Resource Files</Filter>
     </QtUic>
   </ItemGroup>

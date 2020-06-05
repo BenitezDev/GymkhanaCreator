@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>resources/CreateGymkhawnaDialogue.ui</file>
         <file>resources/MainWindow.ui</file>
+        <file>resources/StageWidget.ui</file>
     </qresource>
 </RCC>

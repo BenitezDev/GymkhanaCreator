@@ -7,7 +7,7 @@
 #include <string>
 
 
-namespace benitezdev
+namespace backend
 {
 	class StageComponentAR : StageComponent
 	{

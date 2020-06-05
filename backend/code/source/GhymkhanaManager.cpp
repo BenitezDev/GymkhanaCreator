@@ -1,5 +1,5 @@
 
-#include <Test.hpp>
+#include <GymkhanaManager.hpp>
 #include <iostream>
 
 
@@ -9,22 +9,19 @@
 #include <rapidxml_print.hpp>
 #include <fstream>
 
+
 #include <model/Monologue.hpp>
 #include <sstream>
+
 
 using namespace rapidxml;
 
 
 
-namespace benitezdev
+namespace backend
 {
 	
-	void Test::test()
-	{
-       
-	}
-
-    void Test::create_xml()
+    void GymkhanaManager::create_xml()
     {
         //Character c;
         
