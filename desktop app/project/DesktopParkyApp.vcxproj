@@ -105,6 +105,7 @@
   <ItemGroup>
     <ClCompile Include="..\code\source\AddStageComponentDialog.cpp" />
     <ClCompile Include="..\code\source\ARComponentDialog.cpp" />
+    <ClCompile Include="..\code\source\ARComponentWidget.cpp" />
     <ClCompile Include="..\code\source\CreateGymkhawnaDialog.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\MainWindow.cpp" />
@@ -120,6 +121,7 @@
   <ItemGroup>
     <QtUic Include="resources\AddStageComponentDialog.ui" />
     <QtUic Include="resources\ARComponentDialog.ui" />
+    <QtUic Include="resources\ARComponentWidget.ui" />
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui" />
     <QtUic Include="resources\MainWindow.ui" />
     <QtUic Include="resources\RouteWidget.ui" />
@@ -136,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\ARComponentDialog.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\ARComponentWidget.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

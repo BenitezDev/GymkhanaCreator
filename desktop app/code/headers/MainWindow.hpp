@@ -6,6 +6,7 @@
 
 
 class StageWidget;
+class AddStageComponentDialog;
 
 class MainWindow : public QMainWindow
 {
@@ -25,6 +26,6 @@ public slots:
 	
 	void show_all_components_of_stage(StageWidget* stage);
 
-	void add_ar_component_to_stage(StageWidget* stage);
+	void add_ar_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog);
 	
 };

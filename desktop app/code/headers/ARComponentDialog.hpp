@@ -11,6 +11,6 @@ public:
 	ARComponentDialog(QWidget *parent = Q_NULLPTR);
 	~ARComponentDialog();
 
-private:
+public:
 	Ui::ARComponentDialog ui;
 };

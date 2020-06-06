@@ -44,6 +44,9 @@
     <ClCompile Include="..\code\source\ARComponentDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\code\source\ARComponentWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\MainWindow.hpp">
@@ -64,6 +67,9 @@
     <QtMoc Include="..\code\headers\ARComponentDialog.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="..\code\headers\ARComponentWidget.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui">
@@ -82,6 +88,9 @@
       <Filter>Resource Files</Filter>
     </QtUic>
     <QtUic Include="resources\ARComponentDialog.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="resources\ARComponentWidget.ui">
       <Filter>Resource Files</Filter>
     </QtUic>
   </ItemGroup>

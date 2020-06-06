@@ -6,5 +6,6 @@
         <file>resources/StageWidget.ui</file>
         <file>resources/AddStageComponentDialog.ui</file>
         <file>resources/ARComponentDialog.ui</file>
+        <file>resources/ARComponentWidget.ui</file>
     </qresource>
 </RCC>

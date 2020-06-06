@@ -11,6 +11,7 @@
 
 #include <AddStageComponentDialog.hpp>
 #include <ARComponentDialog.hpp>
+#include <ARComponentWidget.hpp>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -31,17 +32,17 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::create_new_gymkhana()
 {
-	CreateGymkhawnaDialogue dialogue;
+	CreateGymkhawnaDialogue* dialogue = new CreateGymkhawnaDialogue();
 
-	if (dialogue.exec() == QDialog::Accepted)
+	if (dialogue->exec() == QDialog::Accepted)
 	{
 
-		auto text = dialogue.ui.NameInput->toPlainText().toStdString();
+		auto text = dialogue->ui.NameInput->toPlainText().toStdString();
 		//auto version = dialogue.ui.VersionInput->toPlainText().toStdString();
 
 		if (text.empty() /*|| version.empty()*/)
 		{
-			dialogue.ui.errorLabel->setText("Introduce a valid input.");
+			dialogue->ui.errorLabel->setText("Introduce a valid input.");
 		}
 		else
 		{
@@ -53,19 +54,17 @@ void MainWindow::create_new_gymkhana()
 			ui.RoutesTabWidget->addTab(new RouteWidget, { "route" });
 			connect(dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.AddStage, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
 			
-			dialogue.hide();
+			dialogue->hide();
 
 			
 		}
 	}
-	else if (dialogue.exec() == QDialog::Rejected)
+	else if (dialogue->exec() == QDialog::Rejected)
 	{
-		dialogue.hide();
+		dialogue->hide();
+		delete dialogue;
 	}
-	else
-	{
-		dialogue.hide();
-	}
+	
 }
 
 
@@ -82,10 +81,10 @@ void MainWindow::add_stage_to_route()
 void MainWindow::show_all_components_of_stage(StageWidget* stage)
 {
 	
-	AddStageComponentDialog componentPanel;
-	connect(componentPanel.ui.ARComponent, &QAbstractButton::clicked, this, [=]() { add_ar_component_to_stage(stage); });
-	componentPanel.setWindowTitle({ "Select a component to add" });
-	componentPanel.exec();
+	AddStageComponentDialog* componentPanel = new AddStageComponentDialog();
+	connect(componentPanel->ui.ARComponent, &QAbstractButton::clicked, this, [=]() { add_ar_component_to_stage(stage, componentPanel); });
+	componentPanel->setWindowTitle({ "Select a component to add" });
+	componentPanel->exec();
 	//componentPanel.ui.ARComponent
 
 	// Connect all components
@@ -93,13 +92,14 @@ void MainWindow::show_all_components_of_stage(StageWidget* stage)
 	
 }
 
-void MainWindow::add_ar_component_to_stage(StageWidget* stage)
+void MainWindow::add_ar_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog)
 {
-	ARComponentDialog ar_component_dialog;
-	if(ar_component_dialog.exec() == QDialog::Accepted)
-	{
-		ui.gymkhanaName->setText("AR compp");
-	}
-	
-	
+
+	stage->ui.ComponentLayout->addWidget(new ARComponentWidget);
+
+
+	ui.gymkhanaName->setText("AR compp");
+
+	all_components_dialog->hide();
+	delete all_components_dialog;
 }
