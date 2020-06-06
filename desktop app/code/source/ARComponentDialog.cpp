@@ -1,7 +1,7 @@
 #include "ARComponentDialog.hpp"
 
 ARComponentDialog::ARComponentDialog(QWidget *parent)
-	: QWidget(parent)
+	: QDialog(parent)
 {
 	ui.setupUi(this);
 }

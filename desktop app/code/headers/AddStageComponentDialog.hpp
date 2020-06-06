@@ -11,6 +11,6 @@ public:
 	AddStageComponentDialog(QWidget *parent = Q_NULLPTR);
 	~AddStageComponentDialog();
 
-private:
+public:
 	Ui::AddStageComponentDialog ui;
 };

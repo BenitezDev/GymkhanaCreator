@@ -11,6 +11,6 @@ public:
 	StageWidget(QWidget *parent = Q_NULLPTR);
 	~StageWidget();
 
-private:
+public:
 	Ui::StageWidget ui;
 };

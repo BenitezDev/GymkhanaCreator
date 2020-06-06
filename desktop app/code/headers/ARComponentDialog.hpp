@@ -1,9 +1,9 @@
 #pragma once
 
-#include <QWidget>
+#include <QDialog>
 #include "ui_ARComponentDialog.h"
 
-class ARComponentDialog : public QWidget
+class ARComponentDialog : public QDialog
 {
 	Q_OBJECT
 

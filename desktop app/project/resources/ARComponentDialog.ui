@@ -1,23 +1,133 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ARComponentDialog</class>
- <widget class="QWidget" name="ARComponentDialog" >
-  <property name="objectName" >
-   <string notr="true">ARComponentDialog</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QDialog" name="ARComponentDialog">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>400</width>
-	<height>300</height>
+    <x>0</x>
+    <y>0</y>
+    <width>394</width>
+    <height>257</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>ARComponentDialog</string>
   </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>12</number>
+     </property>
+     <property name="topMargin">
+      <number>50</number>
+     </property>
+     <property name="rightMargin">
+      <number>12</number>
+     </property>
+     <property name="bottomMargin">
+      <number>50</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="ImageLayout">
+       <item>
+        <widget class="QLabel" name="ImageLabel">
+         <property name="text">
+          <string>Image Path:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="ImageSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="ImageText">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="GameLayout">
+       <item>
+        <widget class="QLabel" name="GameLabel">
+         <property name="text">
+          <string>Game Path:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="GameSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="GameText">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="CreateARComponent">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
-</UI>
+ <connections>
+  <connection>
+   <sender>CreateARComponent</sender>
+   <signal>accepted()</signal>
+   <receiver>ARComponentDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
