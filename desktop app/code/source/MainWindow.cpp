@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
 	
 
 	ui.RoutesTabWidget->clear();
-	ui.RoutesTabWidget->addTab(new RouteWidget, { "route" });
 	
-	connect(dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.AddStage, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
+	
+	
 }
 
 
@@ -46,6 +46,8 @@ void MainWindow::create_new_gymkhana()
 			gymkhana_name += text;
 			backend::GymkhanaManager::instance().get_gymkhana().change_name(text);
 			ui.gymkhanaName->setText(gymkhana_name.c_str());
+			ui.RoutesTabWidget->addTab(new RouteWidget, { "route" });
+			connect(dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.AddStage, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
 			dialogue.hide();
 
 			
