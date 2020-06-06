@@ -1,0 +1,12 @@
+<!DOCTYPE >
+<Gymkhana>
+	<Route>
+		<Stage>
+			<ar_component>
+				<image_path>fffff</image_path>
+				<game_path>hhhhhhh</game_path>
+			</ar_component>
+		</Stage>
+	</Route>
+</Gymkhana>
+

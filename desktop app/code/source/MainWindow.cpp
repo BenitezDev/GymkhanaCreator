@@ -13,6 +13,9 @@
 #include <ARComponentDialog.hpp>
 #include <ARComponentWidget.hpp>
 #include <iostream>
+#include <model/StateComponentAR.hpp>
+
+#include <model/Route.hpp>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -59,7 +62,7 @@ void MainWindow::create_new_gymkhana()
 				std::string gymkhana_name = "Gymkhana: ";
 				gymkhana_name += text;
 				ui.RoutesTabWidget->clear();
-				backend::GymkhanaManager::instance().get_gymkhana().change_name(text);
+				backend::GymkhanaManager::instance().create_gymkhana(text);
 				ui.gymkhanaName->setText(gymkhana_name.c_str());
 				std::cout << gymkhana_name << std::endl;
 				add_route();
@@ -121,10 +124,13 @@ void MainWindow::add_ar_component_to_stage(StageWidget* stage, AddStageComponent
 
 void MainWindow::save()
 {
+	backend::GymkhanaManager::instance().get_gymkhana();
 	std::cout << "Rutas count: " << routes.size() << std::endl << std::endl;
 	
 	for(int i = 0; i < routes.size() ; ++i)
 	{
+		backend::Route route;
+		
 		ui.RoutesTabWidget->setCurrentIndex(i);
 		std::cout << "Rutas_" << i << std::endl;
 		
@@ -141,25 +147,44 @@ void MainWindow::save()
 				{
 
 					int components_count = stage_widget->ui.ComponentLayout->count();
-					std::cout << "        componentes:" << components_count << std::endl;
+					std::string stage_name = stage_widget->ui.StageName->toPlainText().toStdString();
+					std::cout << "        "  << stage_name << "-" <<"componentes:" << components_count << std::endl;
+
+					backend::Stage stage(stage_name);
 					
 					for(int k = 0; k < stage_widget->ui.ComponentLayout->count(); ++k)
 					{
 						auto ar_component = dynamic_cast<ARComponentWidget*>(stage_widget->ui.ComponentLayout->itemAt(k)->widget());
+						
 						if(ar_component)
 						{
 							std::cout << "            AR:" << std::endl;
-							std::cout << "                img :" << ar_component->ui.plainTextEdit  ->toPlainText().toStdString() << std::endl;
-							std::cout << "                game:" << ar_component->ui.plainTextEdit_2->toPlainText().toStdString() << std::endl;
+							std::cout << "                img :" << ar_component->ui.ImageText->toPlainText().toStdString() << std::endl;
+							std::cout << "                game:" << ar_component->ui.GameText->toPlainText().toStdString() << std::endl;
+
+							
+							std::shared_ptr<backend::StageComponentAR> component_ar
+							{
+								new backend::StageComponentAR
+								{
+									ar_component->ui.ImageText->toPlainText().toStdString(),
+									ar_component->ui.GameText->toPlainText().toStdString()
+								}
+							};
+
+							stage.add_component(component_ar);
 						}
 					}
-					/*if(auto ar_comp = dynamic_cast<ARComponentWidget*>(stage->ui.ComponentLayout.coun))
-					{
-						
-					}*/					
+					
+					route.add_stage(stage);
 				}
 			}
 		}
+
+		backend::GymkhanaManager::instance().add_route(route);
 		
 	}
+	
+	backend::GymkhanaManager::instance().create_xml();
+
 }

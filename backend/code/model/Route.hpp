@@ -27,14 +27,17 @@ namespace backend
 		
 	private:
 		std::vector<Stage> stages;
-		Difficulty difficulty;
-		Target target;
+		//Difficulty difficulty;
+		//Target target;
+
+	public:
+		Route() = default;
 		
 	public:
 		
-		void add_stage()
+		void add_stage(Stage stage)
 		{
-			stages.emplace_back();
+			stages.push_back(stage);
 		}
 
 		void remove_stage(int index)
@@ -43,6 +46,17 @@ namespace backend
 		}
 
 
-		
+		void save_in_xml(rapidxml::xml_node<>* parent)
+		{
+			using namespace rapidxml;
+
+			xml_node<>* node = parent->document()->allocate_node(node_element, "Route");
+			parent->append_node(node);
+			
+			for (auto stage : stages)
+			{
+				stage.save_in_xml(node);
+			}
+		}
 	};
 }
