@@ -11,6 +11,6 @@ public:
 	ARComponentWidget(QWidget *parent = Q_NULLPTR);
 	~ARComponentWidget();
 
-private:
+public:
 	Ui::ARComponentWidget ui;
 };

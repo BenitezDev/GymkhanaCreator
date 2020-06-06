@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
-    <height>417</height>
+    <width>776</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,14 +53,14 @@
           <property name="bottomMargin">
            <number>30</number>
           </property>
-          <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>Add Stage</string>
-            </property>
-           </widget>
-          </item>
          </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="AddStage">
+          <property name="text">
+           <string>Add Stage</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -73,7 +73,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>631</width>
+     <width>776</width>
      <height>22</height>
     </rect>
    </property>

@@ -12,6 +12,7 @@
 #include <AddStageComponentDialog.hpp>
 #include <ARComponentDialog.hpp>
 #include <ARComponentWidget.hpp>
+#include <iostream>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -22,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui.actionCreateNewGymkhana, &QAction::triggered, this, &MainWindow::create_new_gymkhana);
 	connect(ui.AddRoute, &QAbstractButton::clicked, this, &MainWindow::add_route);
 
+	connect(ui.actionSaveGymkhana, &QAction::triggered, this, &MainWindow::save);
 	ui.RoutesTabWidget->clear();
 	
 	
@@ -59,6 +61,7 @@ void MainWindow::create_new_gymkhana()
 				ui.RoutesTabWidget->clear();
 				backend::GymkhanaManager::instance().get_gymkhana().change_name(text);
 				ui.gymkhanaName->setText(gymkhana_name.c_str());
+				std::cout << gymkhana_name << std::endl;
 				add_route();
 				
 
@@ -114,4 +117,49 @@ void MainWindow::add_ar_component_to_stage(StageWidget* stage, AddStageComponent
 
 	all_components_dialog->hide();
 	delete all_components_dialog;
+}
+
+void MainWindow::save()
+{
+	std::cout << "Rutas count: " << routes.size() << std::endl << std::endl;
+	
+	for(int i = 0; i < routes.size() ; ++i)
+	{
+		ui.RoutesTabWidget->setCurrentIndex(i);
+		std::cout << "Rutas_" << i << std::endl;
+		
+		int stages_count = dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.StageLayout->count();
+		std::cout << "    etapas:" << stages_count << std::endl;
+		
+		for(int j = 0; j < stages_count; ++j)
+		{
+			auto widget = dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.StageLayout->itemAt(j)->widget();
+
+			if(widget)
+			{
+				if(auto stage_widget = dynamic_cast<StageWidget*>(widget))
+				{
+
+					int components_count = stage_widget->ui.ComponentLayout->count();
+					std::cout << "        componentes:" << components_count << std::endl;
+					
+					for(int k = 0; k < stage_widget->ui.ComponentLayout->count(); ++k)
+					{
+						auto ar_component = dynamic_cast<ARComponentWidget*>(stage_widget->ui.ComponentLayout->itemAt(k)->widget());
+						if(ar_component)
+						{
+							std::cout << "            AR:" << std::endl;
+							std::cout << "                img :" << ar_component->ui.plainTextEdit  ->toPlainText().toStdString() << std::endl;
+							std::cout << "                game:" << ar_component->ui.plainTextEdit_2->toPlainText().toStdString() << std::endl;
+						}
+					}
+					/*if(auto ar_comp = dynamic_cast<ARComponentWidget*>(stage->ui.ComponentLayout.coun))
+					{
+						
+					}*/					
+				}
+			}
+		}
+		
+	}
 }
