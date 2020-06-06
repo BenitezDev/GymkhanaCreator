@@ -103,7 +103,9 @@
     <QtRcc Include="MainWindow.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\source\CreateGymkhawnaDialogue.cpp" />
+    <ClCompile Include="..\code\source\AddStageComponentDialog.cpp" />
+    <ClCompile Include="..\code\source\ARComponentDialog.cpp" />
+    <ClCompile Include="..\code\source\CreateGymkhawnaDialog.cpp" />
     <ClCompile Include="..\code\source\main.cpp" />
     <ClCompile Include="..\code\source\MainWindow.cpp" />
     <ClCompile Include="..\code\source\RouteWidget.cpp" />
@@ -113,9 +115,11 @@
     <QtMoc Include="..\code\headers\MainWindow.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\code\headers\CreateGymkhawnaDialogue.hpp" />
+    <QtMoc Include="..\code\headers\CreateGymkhawnaDialog.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="resources\AddStageComponentDialog.ui" />
+    <QtUic Include="resources\ARComponentDialog.ui" />
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui" />
     <QtUic Include="resources\MainWindow.ui" />
     <QtUic Include="resources\RouteWidget.ui" />
@@ -126,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\RouteWidget.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\AddStageComponentDialog.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\ARComponentDialog.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

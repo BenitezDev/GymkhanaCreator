@@ -32,10 +32,16 @@
     <ClCompile Include="..\code\source\StageWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\source\CreateGymkhawnaDialogue.cpp">
+    <ClCompile Include="..\code\source\RouteWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\source\RouteWidget.cpp">
+    <ClCompile Include="..\code\source\CreateGymkhawnaDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\AddStageComponentDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\ARComponentDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -43,13 +49,19 @@
     <QtMoc Include="..\code\headers\MainWindow.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="..\code\headers\CreateGymkhawnaDialogue.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="..\code\headers\StageWidget.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\RouteWidget.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\CreateGymkhawnaDialog.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\AddStageComponentDialog.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\ARComponentDialog.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -64,6 +76,12 @@
       <Filter>Resource Files</Filter>
     </QtUic>
     <QtUic Include="resources\StageWidget.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="resources\AddStageComponentDialog.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="resources\ARComponentDialog.ui">
       <Filter>Resource Files</Filter>
     </QtUic>
   </ItemGroup>

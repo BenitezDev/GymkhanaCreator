@@ -1,4 +1,4 @@
-#include "CreateGymkhawnaDialogue.hpp"
+#include "CreateGymkhawnaDialog.hpp"
 
 CreateGymkhawnaDialogue::CreateGymkhawnaDialogue(QWidget *parent)
 	: QDialog(parent)

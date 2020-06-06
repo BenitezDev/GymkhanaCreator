@@ -4,5 +4,7 @@
         <file>resources/MainWindow.ui</file>
         <file>resources/RouteWidget.ui</file>
         <file>resources/StageWidget.ui</file>
+        <file>resources/AddStageComponentDialog.ui</file>
+        <file>resources/ARComponentDialog.ui</file>
     </qresource>
 </RCC>

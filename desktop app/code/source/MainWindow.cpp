@@ -1,7 +1,7 @@
 
 
 #include <MainWindow.hpp>
-#include <CreateGymkhawnaDialogue.hpp>
+#include <CreateGymkhawnaDialog.hpp>
 
 #include <GymkhanaManager.hpp>
 
