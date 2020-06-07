@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>734</width>
-    <height>542</height>
+    <height>890</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -88,7 +88,6 @@
      <string>Archivo</string>
     </property>
     <addaction name="actionCreateNewGymkhana"/>
-    <addaction name="actionLoadGymkhana"/>
     <addaction name="separator"/>
     <addaction name="actionSaveGymkhana"/>
    </widget>

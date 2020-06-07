@@ -1,15 +1,30 @@
-<Gymkhana name="sdad">
-	<Route name="dsad">
-		<Stage name="">
+<Gymkhana name="1123123">
+	<Route name="dfsdfsd">
+		<Stage name="ggg">
 			<ar_component>
-				<image_path/>
-				<game_path/>
+				<image_path>asddasd</image_path>
+				<game_path>gggg</game_path>
 			</ar_component>
 			<dialogue_component>
-				<character/>
-				<side/>
-				<sentence/>
+				<character>hjshjdhas</character>
+				<side>sdfsdf</side>
+				<sentence>fsdfsdf</sentence>
+				<sentence>fdsfsdf</sentence>
+				<sentence>fdsffsdf</sentence>
 			</dialogue_component>
+			<dialogue_component>
+				<character>11</character>
+				<side>22</side>
+				<sentence>333</sentence>
+			</dialogue_component>
+		</Stage>
+	</Route>
+	<Route name="333">
+		<Stage name="333">
+			<ar_component>
+				<image_path>111</image_path>
+				<game_path>22</game_path>
+			</ar_component>
 		</Stage>
 	</Route>
 </Gymkhana>
