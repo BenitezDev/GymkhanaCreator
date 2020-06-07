@@ -157,10 +157,13 @@ void MainWindow::save()
 	
 	for(int i = 0; i < routes.size() ; ++i)
 	{
-		backend::Route route;
-		
+
 		ui.RoutesTabWidget->setCurrentIndex(i);
 		std::cout << "Rutas_" << i << std::endl;
+
+		
+		backend::Route route(ui.RoutesTabWidget->tabText(i).toStdString());
+		
 		
 		int stages_count = dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.StageLayout->count();
 		std::cout << "    etapas:" << stages_count << std::endl;

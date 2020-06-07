@@ -1,43 +1,13 @@
-<Gymkhana name="aaa">
-	<Route>
-		<Stage name="sd">
+<Gymkhana name="parky!">
+	<Route name="maquinismo
+">
+		<Stage name="aaaaaaaa">
 			<ar_component>
-				<image_path/>
-				<game_path/>
+				<image_path>2222</image_path>
+				<game_path>33333333</game_path>
 			</ar_component>
 		</Stage>
 	</Route>
-	<Route/>
-	<Route/>
-	<Route>
-		<Stage name="sd">
-			<ar_component>
-				<image_path/>
-				<game_path/>
-			</ar_component>
-		</Stage>
-	</Route>
-	<Route/>
-	<Route/>
-	<Route>
-		<Stage name="sd">
-			<ar_component>
-				<image_path/>
-				<game_path/>
-			</ar_component>
-		</Stage>
-	</Route>
-	<Route/>
-	<Route/>
-	<Route>
-		<Stage name="sd">
-			<ar_component>
-				<image_path/>
-				<game_path/>
-			</ar_component>
-		</Stage>
-	</Route>
-	<Route/>
-	<Route/>
+	<Route name="blabla"/>
 </Gymkhana>
 
