@@ -18,6 +18,18 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
+    <Filter Include="Header Files\Dialogs">
+      <UniqueIdentifier>{32845c6e-93c8-48a7-93c9-d3647b983067}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Widgets">
+      <UniqueIdentifier>{8b777095-7452-4df3-924a-c63288d57af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialogs">
+      <UniqueIdentifier>{fa8ea9cd-c3d5-409d-9b4a-910cbdec5e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Widgets">
+      <UniqueIdentifier>{c542cc25-bfe4-48c0-be7e-2f2873f7f9ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MainWindow.qrc" />
@@ -29,70 +41,70 @@
     <ClCompile Include="..\code\source\MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\code\source\StageWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\code\source\RouteWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\code\source\CreateGymkhawnaDialog.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\code\source\AddRouteDialog.cpp">
+      <Filter>Source Files\Dialogs</Filter>
     </ClCompile>
     <ClCompile Include="..\code\source\AddStageComponentDialog.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Dialogs</Filter>
     </ClCompile>
     <ClCompile Include="..\code\source\ARComponentDialog.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\CreateGymkhawnaDialog.cpp">
+      <Filter>Source Files\Dialogs</Filter>
     </ClCompile>
     <ClCompile Include="..\code\source\ARComponentWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\code\source\AddRouteDialog.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Widgets</Filter>
     </ClCompile>
     <ClCompile Include="..\code\source\DialogueWidget.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Widgets</Filter>
     </ClCompile>
     <ClCompile Include="..\code\source\MonologueWidget.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\RouteWidget.cpp">
+      <Filter>Source Files\Widgets</Filter>
     </ClCompile>
     <ClCompile Include="..\code\source\SentenceWidget.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\StageWidget.cpp">
+      <Filter>Source Files\Widgets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\MainWindow.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="..\code\headers\StageWidget.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\code\headers\RouteWidget.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\code\headers\CreateGymkhawnaDialog.hpp">
-      <Filter>Header Files</Filter>
+    <QtMoc Include="..\code\headers\AddRouteDialog.hpp">
+      <Filter>Header Files\Dialogs</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\AddStageComponentDialog.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\CreateGymkhawnaDialog.hpp">
+      <Filter>Header Files\Dialogs</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\ARComponentDialog.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Dialogs</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\ARComponentWidget.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="..\code\headers\AddRouteDialog.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Widgets</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\DialogueWidget.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Widgets</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\MonologueWidget.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\RouteWidget.hpp">
+      <Filter>Header Files\Widgets</Filter>
     </QtMoc>
     <QtMoc Include="..\code\headers\SentenceWidget.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\StageWidget.hpp">
+      <Filter>Header Files\Widgets</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

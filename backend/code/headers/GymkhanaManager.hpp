@@ -11,40 +11,49 @@ namespace backend
 	
 	class GYMKHANA_API GymkhanaManager
 	{
+		/**
+		 * The gymkhana that will be fill with data
+		 */
 		Gymkhana gymkhana_;
 
 	private:
+		
 		GymkhanaManager() = default;
 
 	public:
 
-		
-		static GymkhanaManager& instance()
+		/**
+		 * Singleton
+		 */
+		static GymkhanaManager& instance();
+
+		/**
+		 * Create and safe the gymkhana data
+		 */
+		void create_xml();
+
+		/**
+		 * Create the gymkhana
+		 */
+		void create_gymkhana(const std::string& name);
+
+		/**
+		 * Getter for gymkhana
+		 */
+		Gymkhana get_gymkhana()
 		{
-			static GymkhanaManager instance;
-			return instance;
-		}
-		
-		void create_xml()
-		{
-			gymkhana_.save_in_xml();
+			return gymkhana_;
 		}
 
-		void create_gymkhana(const std::string& name)
-		{
-			gymkhana_ = Gymkhana(name);
-			
-		}
-		
-		Gymkhana get_gymkhana() { return gymkhana_; }
-		
+		/**
+		 * Add a route to the gymkhana
+		 */
 		void add_route(Route route)
 		{
 			gymkhana_.add_route(route);
 		}
 		
-		//static char* double2char(int value, rapidxml::xml_document<>* doc);
-		
 	};
 
+	
 }

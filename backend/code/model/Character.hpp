@@ -1,5 +1,14 @@
+/**
+* @file Character.hpp
+*
+* @author Alejandro Benítez López
+*
+* @date 07/06/2020
+*
+*
+* @brief Model data of a character
+*/
 
-// ...
 
 #pragma once
 
@@ -7,9 +16,13 @@
 #include <vector>
 
 
+/*
+ * Al final no se ha implementado el sistema de personajes que se tenía previsto
+ */
+
+
 namespace backend
 {
-
 	class Image
 	{
 		typedef int Pixel; // TODO pixel class
@@ -19,15 +32,11 @@ namespace backend
 
 	public:
 		Image() = default;
-		
-
 	};
 
-	
+
 	class Character
 	{
-		
-		
 	public:
 		enum Feelings
 		{
@@ -39,23 +48,23 @@ namespace backend
 			THINKING_2,
 			DOUBTING_1,
 			DOUBTING_2
-			
+
 			// ...
 		};
-		
+
 	private:
-		std::vector <Image> images;
+		std::vector<Image> images;
 		std::string name;
 
 	public:
 		Character(std::vector<Image>& images, std::string& name)
-		:images(images), name(name)
-		{	
+			: images(images), name(name)
+		{
 		}
 
 		Character() = default;
-		
-		
+
+
 	public:
 
 		void change_name(std::string& name)
@@ -77,9 +86,5 @@ namespace backend
 		{
 			images.erase(images.begin() + index);
 		}
-		
-		
 	};
-
-	
 }

@@ -1,14 +1,17 @@
-
-// ...
+/**
+* @file Monologue.hpp
+*
+* @author Alejandro Benítez López
+*
+* @date 07/06/2020
+*
+* @brief Model data of a monologue
+*/
 
 #pragma once
 
 #include <string>
-
-#include <utility>
 #include <vector>
-#include "Character.hpp"
-
 #include "../../libraries/rapidxml/rapidxml.hpp"
 #include <sstream>
 
@@ -16,97 +19,78 @@ using namespace rapidxml;
 
 namespace backend
 {
-	class Monologue 
+	class Monologue
 	{
-	public:
-		enum FaceSide
-		{
-			LEFT,
-			RIGHT
-		};
-
-		std::vector<std::string> FadeSideString{ "LEFT", "RIGHT" };
 		
 	private:
-		////Character character;
-		std::string character;
-		std::vector<std::string> sentences;
-		std::string side;
 		
-
+		std::string character_;
+		std::vector<std::string> sentences_;
+		std::string side_;
 
 	public:
 		Monologue() = default;
-		
-		
+
 		Monologue(const std::string character, std::vector<std::string> sentences, std::string side)
-		: character(character), sentences(sentences), side(side)
+			: character_(character), sentences_(sentences), side_(side)
 		{
 		}
 
-		
+
 	public:
-	/*	void change_character(Character& character)
-		{
-			this->character = character;
-		}*/
 
 		void add_sentence()
 		{
-			sentences.emplace_back();
+			sentences_.emplace_back();
 		}
 
 		void remove_sentence(int index)
 		{
-			sentences.erase(sentences.begin() + index);
+			sentences_.erase(sentences_.begin() + index);
 		}
 
-		void change_side(FaceSide side)
-		{
-			this->side = side;
-		}
-
-		std::string get_character() { return character; }
-		std::string get_side     () { return side; }
-		std::vector<std::string> get_sentences() { return sentences; }
+		std::string get_character() { return character_; }
+		std::string get_side()		{ return side_; }
+		std::vector<std::string> get_sentences() { return sentences_; }
+		
 	public:
+		
 		void save_in_xml(rapidxml::xml_node<>* parent)
 		{
-			
-			
-			xml_node<>* node = parent->document()->allocate_node(node_element, "monologue_test");
+			xml_node<>* node = parent->document()->allocate_node(
+				node_element, "monologue_test");
 			parent->append_node(node);
 
 
-			char* side = parent->document()->allocate_string(this->side.c_str());
-			xml_node<>* node1 = parent->document()->allocate_node(node_element, "side", side);
+			char* side = parent
+			             ->document()->allocate_string(this->side_.c_str());
+			xml_node<>* node1 = parent->document()->allocate_node(
+				node_element, "side", side);
 			node->append_node(node1);
-		
-		
-			xml_node<>* node2 = parent->document()->allocate_node(node_element, "character", "TODO");
+
+
+			xml_node<>* node2 = parent->document()->allocate_node(
+				node_element, "character", "TODO");
 			node->append_node(node2);
-		
-		
-			xml_node<>* node3 = parent->document()->allocate_node(node_element, "sentences");
+
+
+			xml_node<>* node3 = parent->document()->allocate_node(
+				node_element, "sentences");
 			node->append_node(node3);
 
-			for(size_t i = 0; i < sentences.size(); ++i)
+			for (size_t i = 0; i < sentences_.size(); ++i)
 			{
-				
-				xml_node<>* sentence = parent->document()->allocate_node(node_element, "sentence", sentences[i].c_str());
+				xml_node<>* sentence = parent->document()->allocate_node(
+					node_element, "sentence",
+					sentences_[i].c_str());
 				node3->append_node(sentence);
 				std::string index_string;
 
 
-				
-				xml_attribute<>* attr = parent->document()->allocate_attribute("index", int2char(i,parent->document()));
+				xml_attribute<>* attr = parent->document()->allocate_attribute("index",int2char(i, parent->document()));
 				sentence->append_attribute(attr);
 			}
-			
 
-	
-			/*xml_attribute<>* attr = parent.document()->allocate_attribute("href", "google.com");
-			node->append_attribute(attr);*/
 		}
 
 		char* int2char(int value, xml_document<>* doc)

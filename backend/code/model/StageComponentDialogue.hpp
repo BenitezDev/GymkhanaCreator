@@ -1,9 +1,15 @@
-
-// ...
+/**
+* @file StageComponentDialogue.hpp
+*
+* @author Alejandro Benítez López
+*
+* @date 07/06/2020
+*
+* @brief Model data of a Dialogue Stage component
+*/
 
 #pragma once
 
-#include <utility>
 #include "StageComponent.hpp"
 #include "Monologue.hpp"
 

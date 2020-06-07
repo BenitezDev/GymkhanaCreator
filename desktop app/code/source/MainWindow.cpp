@@ -1,16 +1,10 @@
-
-
 #include <MainWindow.hpp>
 #include <CreateGymkhawnaDialog.hpp>
-
 #include <GymkhanaManager.hpp>
-
 #include <model/Gymkhana.hpp>
 #include <StageWidget.hpp>
 #include <RouteWidget.hpp>
-
 #include <AddStageComponentDialog.hpp>
-#include <ARComponentDialog.hpp>
 #include <ARComponentWidget.hpp>
 #include <iostream>
 #include <model/StateComponentAR.hpp>
@@ -18,7 +12,6 @@
 #include <DialogueWidget.hpp>
 #include <MonologueWidget.hpp>
 #include <model/Route.hpp>
-#include <model/Dialogue.hpp>
 #include <model/Monologue.hpp>
 #include <SentenceWidget.hpp>
 #include "model/StageComponentDialogue.hpp"
@@ -71,7 +64,6 @@ void MainWindow::create_new_gymkhana()
 				ui.RoutesTabWidget->clear();
 				backend::GymkhanaManager::instance().create_gymkhana(text);
 				ui.gymkhanaName->setText(gymkhana_name.c_str());
-				std::cout << gymkhana_name << std::endl;
 				ui.AddRoute->show();
 				add_route();
 				
@@ -185,7 +177,7 @@ void MainWindow::save()
 		
 		
 		int stages_count = dynamic_cast<RouteWidget*>(ui.RoutesTabWidget->currentWidget())->ui.StageLayout->count();
-		std::cout << "    etapas:" << stages_count << std::endl;
+		std::cout << "    Etapas:" << stages_count << std::endl;
 		
 		for(int j = 0; j < stages_count; ++j)
 		{
@@ -246,8 +238,6 @@ void MainWindow::save()
 								sentences,
 								monologue->ui.SideText->toPlainText().toStdString()	
 							};
-
-
 
 
 							std::cout << "            Dialog:" << std::endl;

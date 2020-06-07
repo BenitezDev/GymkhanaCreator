@@ -1,32 +1,30 @@
-
-// ...
+/**
+* @file Dialogue.hpp
+*
+* @author Alejandro Benítez López
+*
+* @date 07/06/2020
+*
+* @brief Model data of a dialogue
+*/
 
 #pragma once
 
-
-#include <vector>
 #include "Monologue.hpp"
 
 
 namespace backend
 {
-	class Dialogue 
+	class Dialogue
 	{
+		//TODO: change to a vector<Monologue>
 
-		//std::vector<Monologue> monologues;
-		Monologue monologue;
+		Monologue monologue_;
+
 	public:
 
-		Dialogue(Monologue monologue) : monologue(monologue)
+		Dialogue(Monologue monologue) : monologue_(monologue)
 		{
 		}
-		
-	public:
-		
-	/*	void add_monologue()
-		{
-			monologues.emplace_back();
-		}*/
-
 	};
 }

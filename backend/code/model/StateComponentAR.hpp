@@ -1,5 +1,12 @@
-
-// ...
+/**
+* @file StateComponentAR.hpp
+*
+* @author Alejandro Benítez López
+*
+* @date 07/06/2020
+*
+* @brief Model data of a AR stage component
+*/
 
 #pragma once
 
@@ -15,7 +22,13 @@ namespace backend
 	class StageComponentAR : public StageComponent
 	{
 	private:
+		/**
+		 * The path of the image to be track
+		 */
 		std::string image_path;
+		/**
+		 * The game paths
+		 */
 		std::string  game_path;
 
 	public:
@@ -39,7 +52,6 @@ namespace backend
 
 		void save_in_xml(xml_node<>* parent) override
 		{
-
 			xml_node<>* node = parent->document()->allocate_node(node_element, "ar_component");
 			parent->append_node(node);
 

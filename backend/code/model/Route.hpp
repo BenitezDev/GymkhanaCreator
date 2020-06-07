@@ -1,10 +1,16 @@
-
-// ...
+/**
+* @file Route.hpp
+*
+* @author Alejandro Benítez López
+*
+* @date 07/06/2020
+*
+* @brief Model data of a Route
+*/
 
 #pragma once
 #include "Stage.hpp"
 #include <vector>
-
 
 
 namespace backend
@@ -28,6 +34,7 @@ namespace backend
 	private:
 		std::string name;
 		std::vector<Stage> stages;
+		
 		//Difficulty difficulty;
 		//Target target;
 
@@ -36,6 +43,7 @@ namespace backend
 		Route(const std::string& name) : name(name)
 		{
 		}
+		
 	public:
 		
 		void add_stage(Stage stage)
