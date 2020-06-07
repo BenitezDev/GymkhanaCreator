@@ -11,6 +11,6 @@ public:
 	SentenceWidget(QWidget *parent = Q_NULLPTR);
 	~SentenceWidget();
 
-private:
+public:
 	Ui::SentenceWidget ui;
 };

@@ -94,7 +94,7 @@
    <item>
     <widget class="QPushButton" name="AddSentenceButton">
      <property name="text">
-      <string>PushButton</string>
+      <string>Add Sentence</string>
      </property>
     </widget>
    </item>

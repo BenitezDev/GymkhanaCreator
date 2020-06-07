@@ -13,8 +13,8 @@ namespace backend
 		StageComponent() = default;
 
 	public:
-		/*virtual void save_in_xml(rapidxml::xml_node<>* parent)
+		virtual void save_in_xml(rapidxml::xml_node<>* parent)
 		{
-		}*/
+		}
 	};
 }

@@ -16,9 +16,12 @@
 #include <model/StateComponentAR.hpp>
 #include <AddRouteDialog.hpp>
 #include <DialogueWidget.hpp>
-
+#include <MonologueWidget.hpp>
 #include <model/Route.hpp>
-
+#include <model/Dialogue.hpp>
+#include <model/Monologue.hpp>
+#include <SentenceWidget.hpp>
+#include "model/StageComponentDialogue.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -157,11 +160,14 @@ void MainWindow::add_monologue_component_to_stage(StageWidget* stage, AddStageCo
 {
 	DialogueWidget* dialogue_widget = new DialogueWidget;
 	
-	dialogue_widget->add_monologue(); // tiene que haber un monologo para que tenga sentido el componente
+	dialogue_widget->add_monologue(); // tiene que haber un monologo para que tenga sentido el componenteç
+	
 	stage->ui.ComponentLayout->addWidget(dialogue_widget);
 
+	connect(dialogue_widget->ui.AddMonologueButton, &QAbstractButton::clicked, this, [=]() { add_monologue_component_to_stage(stage, all_components_dialog); });
+
 	all_components_dialog->hide();
-	delete all_components_dialog;
+	
 }
 void MainWindow::save()
 {
@@ -195,18 +201,17 @@ void MainWindow::save()
 					std::cout << "        "  << stage_name << "-" <<"componentes:" << components_count << std::endl;
 
 					backend::Stage stage(stage_name);
-					
+
 					for(int k = 0; k < stage_widget->ui.ComponentLayout->count(); ++k)
 					{
-						auto ar_component = dynamic_cast<ARComponentWidget*>(stage_widget->ui.ComponentLayout->itemAt(k)->widget());
 						
-						if(ar_component)
+
+						if(auto ar_component = dynamic_cast<ARComponentWidget*>(stage_widget->ui.ComponentLayout->itemAt(k)->widget()))
 						{
 							std::cout << "            AR:" << std::endl;
 							std::cout << "                img :" << ar_component->ui.ImageText->toPlainText().toStdString() << std::endl;
 							std::cout << "                game:" << ar_component->ui.GameText->toPlainText().toStdString() << std::endl;
 
-							
 							std::shared_ptr<backend::StageComponentAR> component_ar
 							{
 								new backend::StageComponentAR
@@ -217,6 +222,49 @@ void MainWindow::save()
 							};
 
 							stage.add_component(component_ar);
+						}
+						else if(auto dialog_comp = dynamic_cast<DialogueWidget*>(stage_widget->ui.ComponentLayout->itemAt(k)->widget()))
+						{
+							auto monologue = dialog_comp->ui.MonologueScrollArea->findChild<MonologueWidget*>("MonologueWidget");
+							
+							
+							// Getting the sentences
+							std::vector<std::string> sentences;
+							
+							for (int l = 0; l < monologue->ui.SentencesLayout->count(); ++l)
+							{
+								auto w = monologue->ui.SentencesLayout->itemAt(l)->widget();
+								if(auto sentence = dynamic_cast<SentenceWidget*>(w))
+								{
+									sentences.push_back(sentence->ui.plainTextEdit->toPlainText().toStdString());
+								}
+							}
+							
+							backend::Monologue monologues 
+							{
+								monologue->ui.CharacterText->toPlainText().toStdString(),
+								sentences,
+								monologue->ui.SideText->toPlainText().toStdString()	
+							};
+
+
+
+
+							std::cout << "            Dialog:" << std::endl;
+							std::cout << "                Character:" << monologue->ui.CharacterText->toPlainText().toStdString() << std::endl;
+							std::cout << "                Side:" << monologue->ui.SideText->toPlainText().toStdString() << std::endl;
+
+							for(int z = 0; z < sentences.size(); z++)
+							{
+								std::cout << "                    Sentence_" << z<< ":" <<sentences[z] << std::endl;	
+							}
+							
+
+
+							
+							std::shared_ptr<backend::StageComponentDialogue> component_dialogue{ new backend::StageComponentDialogue({monologues}) };
+							
+							stage.add_component(component_dialogue);
 						}
 					}
 					

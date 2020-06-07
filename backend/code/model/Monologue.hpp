@@ -9,10 +9,11 @@
 #include <vector>
 #include "Character.hpp"
 
-#include <rapidxml.hpp>
+#include "../../libraries/rapidxml/rapidxml.hpp"
 #include <sstream>
 
 using namespace rapidxml;
+
 namespace backend
 {
 	class Monologue 
@@ -28,9 +29,9 @@ namespace backend
 		
 	private:
 		////Character character;
-		std::string charactrer;
+		std::string character;
 		std::vector<std::string> sentences;
-		FaceSide side;
+		std::string side;
 		
 
 
@@ -38,10 +39,9 @@ namespace backend
 		Monologue() = default;
 		
 		
-		Monologue(/*Character& character,*/ std::vector<std::string> sentences, FaceSide side)
-		: /*character(character), *//*sentences(sentences),*/ side(side)
+		Monologue(const std::string character, std::vector<std::string> sentences, std::string side)
+		: character(character), sentences(sentences), side(side)
 		{
-			this->sentences = sentences;
 		}
 
 		
@@ -66,6 +66,9 @@ namespace backend
 			this->side = side;
 		}
 
+		std::string get_character() { return character; }
+		std::string get_side     () { return side; }
+		std::vector<std::string> get_sentences() { return sentences; }
 	public:
 		void save_in_xml(rapidxml::xml_node<>* parent)
 		{
@@ -75,8 +78,8 @@ namespace backend
 			parent->append_node(node);
 
 
-			
-			xml_node<>* node1 = parent->document()->allocate_node(node_element, "side", FadeSideString[side].c_str());
+			char* side = parent->document()->allocate_string(this->side.c_str());
+			xml_node<>* node1 = parent->document()->allocate_node(node_element, "side", side);
 			node->append_node(node1);
 		
 		

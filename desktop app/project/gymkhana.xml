@@ -1,13 +1,23 @@
-<Gymkhana name="parky!">
-	<Route name="maquinismo
-">
-		<Stage name="aaaaaaaa">
+<Gymkhana name="fsdf">
+	<Route name="df">
+		<Stage name="etapa">
 			<ar_component>
-				<image_path>2222</image_path>
-				<game_path>33333333</game_path>
+				<image_path>imagen flama</image_path>
+				<game_path>juego flamo</game_path>
 			</ar_component>
+			<dialogue_component>
+				<character>parky</character>
+				<side>IZQ</side>
+				<sentence>hola soy parky</sentence>
+				<sentence>que tal</sentence>
+			</dialogue_component>
+			<dialogue_component>
+				<character>alien</character>
+				<side>DCHA</side>
+				<sentence>muajajja te matere</sentence>
+				<sentence>entre terribel sufrimiento</sentence>
+			</dialogue_component>
 		</Stage>
 	</Route>
-	<Route name="blabla"/>
 </Gymkhana>
 

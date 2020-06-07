@@ -13,14 +13,20 @@ namespace backend
 	class Dialogue 
 	{
 
-		std::vector<Monologue> monologues;
-
-
+		//std::vector<Monologue> monologues;
+		Monologue monologue;
 	public:
-		void add_monologue()
+
+		Dialogue(Monologue monologue) : monologue(monologue)
+		{
+		}
+		
+	public:
+		
+	/*	void add_monologue()
 		{
 			monologues.emplace_back();
-		}
+		}*/
 
 	};
 }

@@ -37,7 +37,7 @@ namespace backend
 			this->game_path = game_path;
 		}
 
-		void save_in_xml(xml_node<>* parent) 
+		void save_in_xml(xml_node<>* parent) override
 		{
 
 			xml_node<>* node = parent->document()->allocate_node(node_element, "ar_component");
