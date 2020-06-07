@@ -103,6 +103,7 @@
     <QtRcc Include="MainWindow.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\code\source\AddRouteDialog.cpp" />
     <ClCompile Include="..\code\source\AddStageComponentDialog.cpp" />
     <ClCompile Include="..\code\source\ARComponentDialog.cpp" />
     <ClCompile Include="..\code\source\ARComponentWidget.cpp" />
@@ -119,6 +120,7 @@
     <QtMoc Include="..\code\headers\CreateGymkhawnaDialog.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="resources\AddRouteDialog.ui" />
     <QtUic Include="resources\AddStageComponentDialog.ui" />
     <QtUic Include="resources\ARComponentDialog.ui" />
     <QtUic Include="resources\ARComponentWidget.ui" />
@@ -141,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\ARComponentWidget.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\AddRouteDialog.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

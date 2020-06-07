@@ -1,25 +1,43 @@
-<Gymkhana name="parky">
+<Gymkhana name="aaa">
 	<Route>
-		<Stage name="etapa0">
+		<Stage name="sd">
 			<ar_component>
-				<image_path>img0</image_path>
-				<game_path>juego0</game_path>
-			</ar_component>
-		</Stage>
-		<Stage name="aaaaaa">
-			<ar_component>
-				<image_path>bbbbbbbbbbb</image_path>
-				<game_path>cccccccccc</game_path>
+				<image_path/>
+				<game_path/>
 			</ar_component>
 		</Stage>
 	</Route>
+	<Route/>
+	<Route/>
 	<Route>
-		<Stage name="5555555">
+		<Stage name="sd">
 			<ar_component>
-				<image_path>33333333</image_path>
-				<game_path>11111</game_path>
+				<image_path/>
+				<game_path/>
 			</ar_component>
 		</Stage>
 	</Route>
+	<Route/>
+	<Route/>
+	<Route>
+		<Stage name="sd">
+			<ar_component>
+				<image_path/>
+				<game_path/>
+			</ar_component>
+		</Stage>
+	</Route>
+	<Route/>
+	<Route/>
+	<Route>
+		<Stage name="sd">
+			<ar_component>
+				<image_path/>
+				<game_path/>
+			</ar_component>
+		</Stage>
+	</Route>
+	<Route/>
+	<Route/>
 </Gymkhana>
 

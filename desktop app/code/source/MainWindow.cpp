@@ -14,6 +14,7 @@
 #include <ARComponentWidget.hpp>
 #include <iostream>
 #include <model/StateComponentAR.hpp>
+#include <AddRouteDialog.hpp>
 
 #include <model/Route.hpp>
 
@@ -92,16 +93,38 @@ void MainWindow::add_stage_to_route()
 
 void MainWindow::add_route()
 {
-	//if (backend::GymkhanaManager::instance().get_gymkhana().get_name().empty()) return;
 	
-	auto new_route = new RouteWidget();
-	routes.push_back(new_route);
-	std::string route = "Route";
-	std::string route_number = std::to_string(routes.size());
-	std::string sum = route + route_number;
-	ui.RoutesTabWidget->addTab(new_route, sum.c_str());
+	AddRouteDialog route_dialog;
 	
-	connect(new_route->ui.AddStage, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
+	auto status = route_dialog.exec();
+	std::string route_name = "";
+	
+	while (status != QDialog::Rejected)
+	{
+
+		if (status == QDialog::Accepted)
+		{
+			route_name = route_dialog.ui.RouteName->toPlainText().toStdString();
+
+		
+			if (route_name.empty())
+			{
+
+				status = route_dialog.exec();
+			}
+			else
+			{
+				auto new_route = new RouteWidget();
+				routes.push_back(new_route);
+				ui.RoutesTabWidget->addTab(new_route, route_name.c_str());
+
+				connect(new_route->ui.AddStage, &QAbstractButton::clicked, this, &MainWindow::add_stage_to_route);
+				
+				route_dialog.hide();
+				return;
+			}
+		}
+	}
 }
 
 void MainWindow::show_all_stage_components(StageWidget* stage)
