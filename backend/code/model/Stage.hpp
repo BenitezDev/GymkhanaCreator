@@ -20,7 +20,7 @@ namespace backend
 		double longitude;
 
 
-		std::vector<std::shared_ptr<StageComponentAR>> components;
+		std::vector<std::shared_ptr<StageComponent>> components;
 		
 	public:
 		Stage() = default;
@@ -29,7 +29,7 @@ namespace backend
 		}
 		
 	public:
-		 void add_component(std::shared_ptr<StageComponentAR> comp)
+		 void add_component(std::shared_ptr<StageComponent> comp)
 		 {
 			 components.push_back(comp);
 		 }
@@ -38,11 +38,13 @@ namespace backend
 		 {
 			 using namespace rapidxml;
 
-			 char* name = parent->document()->allocate_string(name_.c_str());
-			 xml_node<>* node = parent->document()->allocate_node(node_element, "Stage", name);
-
+			 
+			 xml_node<>* node = parent->document()->allocate_node(node_element, "Stage");
 			 parent->append_node(node);
 
+			 char* name = parent->document()->allocate_string(name_.c_str());
+			 xml_attribute<>* attr = parent->document()->allocate_attribute("name",name);
+			 node->append_attribute(attr);
 		 	
 		
 

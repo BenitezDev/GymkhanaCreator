@@ -44,10 +44,14 @@ namespace backend
 			
 			xml_document<> doc;
 
-			xml_node<>* node = doc.allocate_node(node_doctype, "", "");
+			
+			xml_node<>* node = doc.allocate_node(node_element, "Gymkhana");
 			doc.append_node(node);
-			node = doc.allocate_node(node_element, "Gymkhana", name.c_str());
-			doc.append_node(node);
+
+			char* name = doc.allocate_string(this->name.c_str());
+			xml_attribute<>* attr = doc.allocate_attribute("name", name);
+			node->append_attribute(attr);
+		
 
 			for (Route route : routes)
 			{

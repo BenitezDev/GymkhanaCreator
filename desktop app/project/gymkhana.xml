@@ -1,10 +1,23 @@
-<!DOCTYPE >
-<Gymkhana>
+<Gymkhana name="parky">
 	<Route>
-		<Stage>
+		<Stage name="etapa0">
 			<ar_component>
-				<image_path>fffff</image_path>
-				<game_path>hhhhhhh</game_path>
+				<image_path>img0</image_path>
+				<game_path>juego0</game_path>
+			</ar_component>
+		</Stage>
+		<Stage name="aaaaaa">
+			<ar_component>
+				<image_path>bbbbbbbbbbb</image_path>
+				<game_path>cccccccccc</game_path>
+			</ar_component>
+		</Stage>
+	</Route>
+	<Route>
+		<Stage name="5555555">
+			<ar_component>
+				<image_path>33333333</image_path>
+				<game_path>11111</game_path>
 			</ar_component>
 		</Stage>
 	</Route>
