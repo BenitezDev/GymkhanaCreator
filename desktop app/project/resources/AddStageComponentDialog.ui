@@ -36,6 +36,13 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="MonologueComponent">
+         <property name="text">
+          <string>Dialogue Component</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>

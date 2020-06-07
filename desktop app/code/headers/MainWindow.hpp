@@ -32,6 +32,9 @@ public slots:
 	void show_all_stage_components(StageWidget* stage);
 
 	void add_ar_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog);
+	void add_monologue_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog);
 	
 	void save();
 };
+
+

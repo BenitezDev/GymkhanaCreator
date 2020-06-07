@@ -8,5 +8,7 @@
         <file>resources/ARComponentDialog.ui</file>
         <file>resources/ARComponentWidget.ui</file>
         <file>resources/AddRouteDialog.ui</file>
+        <file>resources/DialogueWidget.ui</file>
+        <file>resources/MonologueWidget.ui</file>
     </qresource>
 </RCC>

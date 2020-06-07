@@ -50,6 +50,12 @@
     <ClCompile Include="..\code\source\AddRouteDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\code\source\DialogueWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\MonologueWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\MainWindow.hpp">
@@ -76,6 +82,12 @@
     <QtMoc Include="..\code\headers\AddRouteDialog.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="..\code\headers\DialogueWidget.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\code\headers\MonologueWidget.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="resources\CreateGymkhawnaDialogue.ui">
@@ -100,6 +112,12 @@
       <Filter>Resource Files</Filter>
     </QtUic>
     <QtUic Include="resources\AddRouteDialog.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="resources\DialogueWidget.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtUic Include="resources\MonologueWidget.ui">
       <Filter>Resource Files</Filter>
     </QtUic>
   </ItemGroup>

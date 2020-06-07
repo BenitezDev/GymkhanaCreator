@@ -15,6 +15,7 @@
 #include <iostream>
 #include <model/StateComponentAR.hpp>
 #include <AddRouteDialog.hpp>
+#include <DialogueWidget.hpp>
 
 #include <model/Route.hpp>
 
@@ -131,14 +132,16 @@ void MainWindow::show_all_stage_components(StageWidget* stage)
 {
 	
 	AddStageComponentDialog* componentPanel = new AddStageComponentDialog();
-	connect(componentPanel->ui.ARComponent, &QAbstractButton::clicked, this, [=]() { add_ar_component_to_stage(stage, componentPanel); });
+	
 	componentPanel->setWindowTitle({ "Select a component to add" });
-	componentPanel->exec();
-	//componentPanel.ui.ARComponent
-
+	
 	// Connect all components
+	connect(componentPanel->ui.ARComponent, &QAbstractButton::clicked, this, [=]() { add_ar_component_to_stage(stage, componentPanel); });
+	
+	connect(componentPanel->ui.MonologueComponent, &QAbstractButton::clicked, this, [=]() { add_monologue_component_to_stage(stage, componentPanel); });
 	
 	
+	componentPanel->exec();
 }
 
 void MainWindow::add_ar_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog)
@@ -150,6 +153,15 @@ void MainWindow::add_ar_component_to_stage(StageWidget* stage, AddStageComponent
 	delete all_components_dialog;
 }
 
+void MainWindow::add_monologue_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog)
+{
+	DialogueWidget* dialogue_widget = new DialogueWidget;
+	// TODO: LLAMAR A DIALOGUE_WIDGER.ADD_MONOLOGUE!
+	stage->ui.ComponentLayout->addWidget(dialogue_widget);
+
+	all_components_dialog->hide();
+	delete all_components_dialog;
+}
 void MainWindow::save()
 {
 	backend::GymkhanaManager::instance().get_gymkhana();

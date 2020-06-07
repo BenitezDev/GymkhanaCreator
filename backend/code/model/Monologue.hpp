@@ -27,7 +27,8 @@ namespace backend
 		std::vector<std::string> FadeSideString{ "LEFT", "RIGHT" };
 		
 	private:
-		//Character character;
+		////Character character;
+		std::string charactrer;
 		std::vector<std::string> sentences;
 		FaceSide side;
 		
