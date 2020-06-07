@@ -113,6 +113,7 @@
     <ClCompile Include="..\code\source\MainWindow.cpp" />
     <ClCompile Include="..\code\source\MonologueWidget.cpp" />
     <ClCompile Include="..\code\source\RouteWidget.cpp" />
+    <ClCompile Include="..\code\source\SentenceWidget.cpp" />
     <ClCompile Include="..\code\source\StageWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,7 @@
     <QtUic Include="resources\MainWindow.ui" />
     <QtUic Include="resources\MonologueWidget.ui" />
     <QtUic Include="resources\RouteWidget.ui" />
+    <QtUic Include="resources\SentenceWidget.ui" />
     <QtUic Include="resources\StageWidget.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="..\code\headers\MonologueWidget.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\code\headers\SentenceWidget.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

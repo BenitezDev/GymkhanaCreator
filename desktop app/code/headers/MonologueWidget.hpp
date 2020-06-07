@@ -11,6 +11,6 @@ public:
 	MonologueWidget(QWidget *parent = Q_NULLPTR);
 	~MonologueWidget();
 
-private:
+public:
 	Ui::MonologueWidget ui;
 };

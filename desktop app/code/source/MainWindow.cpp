@@ -156,7 +156,8 @@ void MainWindow::add_ar_component_to_stage(StageWidget* stage, AddStageComponent
 void MainWindow::add_monologue_component_to_stage(StageWidget* stage, AddStageComponentDialog* all_components_dialog)
 {
 	DialogueWidget* dialogue_widget = new DialogueWidget;
-	// TODO: LLAMAR A DIALOGUE_WIDGER.ADD_MONOLOGUE!
+	
+	dialogue_widget->add_monologue(); // tiene que haber un monologo para que tenga sentido el componente
 	stage->ui.ComponentLayout->addWidget(dialogue_widget);
 
 	all_components_dialog->hide();

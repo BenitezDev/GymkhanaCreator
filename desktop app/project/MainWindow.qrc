@@ -10,5 +10,6 @@
         <file>resources/AddRouteDialog.ui</file>
         <file>resources/DialogueWidget.ui</file>
         <file>resources/MonologueWidget.ui</file>
+        <file>resources/SentenceWidget.ui</file>
     </qresource>
 </RCC>
