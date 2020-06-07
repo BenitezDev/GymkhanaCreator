@@ -22,7 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    
+
+	ui.AddRoute->hide();
+	
     connect(ui.actionCreateNewGymkhana, &QAction::triggered, this, &MainWindow::create_new_gymkhana);
 	connect(ui.AddRoute, &QAbstractButton::clicked, this, &MainWindow::add_route);
 
@@ -65,6 +67,7 @@ void MainWindow::create_new_gymkhana()
 				backend::GymkhanaManager::instance().create_gymkhana(text);
 				ui.gymkhanaName->setText(gymkhana_name.c_str());
 				std::cout << gymkhana_name << std::endl;
+				ui.AddRoute->show();
 				add_route();
 				
 
@@ -89,6 +92,8 @@ void MainWindow::add_stage_to_route()
 
 void MainWindow::add_route()
 {
+	//if (backend::GymkhanaManager::instance().get_gymkhana().get_name().empty()) return;
+	
 	auto new_route = new RouteWidget();
 	routes.push_back(new_route);
 	std::string route = "Route";
